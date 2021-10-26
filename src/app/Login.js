@@ -6,7 +6,7 @@ export const Login = () => {
   const dispatch = useDispatch();
   const submit = (evt) => {
     evt.preventDefault();
-    console.log('email => ', email);
+    localStorage.setItem("email", email)
     dispatch(authActions.setEmail(email));
     setEmail('');
   };

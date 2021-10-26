@@ -36,7 +36,7 @@ function PostDetails() {
             <div className={"text"}>{post.body}</div>
             <div className="comment_titel"> Koментарі:</div>
             <div className={"btn comment__btn"} onClick={() => dispatch(todoActions.getComments(post.id))}> Завантажити </div>
-            {comments[0].postId == id && comments.map(item =>{ return <Comment name={item.name} email={item.email} text={item.body} key={item.id}/>})}
+            {comments[0].postId === +id && comments.map(item =>{ return <Comment name={item.name} email={item.email} text={item.body} key={item.id}/>})}
             
         </div>
 

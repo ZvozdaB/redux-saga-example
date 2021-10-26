@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {  useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Posts } from './Posts/Posts';
 import { todoActions } from './store/todo/actions';
@@ -6,11 +6,10 @@ import { todoActions } from './store/todo/actions';
 
 export const Home = () => {
   const dispatch = useDispatch();
-  const { email, isToDoLoading, todoList } = useSelector((state) => {
+  const { email, isToDoLoading,  } = useSelector((state) => {
     return {
       email: state.auth.email,
       isToDoLoading: state.todo.loading,
-      todoList: state.todo.list,
     };
   });
 
