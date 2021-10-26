@@ -1,25 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import { useSelector } from 'react-redux';
+import { Login } from './app/Login';
+import { Home } from './app/Home';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const email = useSelector((state) => state.auth.email);
+  console.log('email => ', email);
+  const isUserLogin = !email?.length;
+  if (isUserLogin) {
+    return <Login />;
+  }
+  return <Home />;
 }
 
 export default App;
