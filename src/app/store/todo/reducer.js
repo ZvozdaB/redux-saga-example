@@ -3,6 +3,7 @@ import { todoConsts } from './actions';
 const initialState = {
   loading: true,
   list: [],
+  commentList: [{}],
 };
 
 export const todoReducer = (state = initialState, action) => {
@@ -17,7 +18,18 @@ export const todoReducer = (state = initialState, action) => {
     case todoConsts.TODO_GET_LIST: {
       return {
         ...state,
-        loading: false,
+        loading: true,
+      };
+    }
+    case todoConsts.TODO_GET_COMMENT_RESPONSE: {
+      return {
+        ...state,
+        commentList: action.payload,
+      };
+    }
+    case todoConsts.TODO_GET_COMMENT: {
+      return {
+        ...state,
       };
     }
     default: {

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Posts } from './Posts/Posts';
 import { todoActions } from './store/todo/actions';
+
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -24,7 +26,7 @@ export const Home = () => {
       </div>
 
       {isToDoLoading && 'Ще не загрузилися'}
-      {!isToDoLoading && JSON.stringify(todoList)}
+      {!isToDoLoading && <Posts/>}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { authConsts } from './actions';
 
 const initialState = {
-  email: 'sergiy.kunnik@gmail.com',
+  email: '',
 };
 
 export const authReducer = (state = initialState, action) => {
